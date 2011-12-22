@@ -1,15 +1,9 @@
 %p#notice= notice
 
-%p
-  %b Title:
-  = @recipe.title
-%p
+%h1= @recipe.title
+%div
   %b Ingredients:
-  = @recipe.ingredients
-%p
+  %div= @recipe.ingredients
+%div
   %b Directions:
-  = @recipe.directions
-
-= link_to 'Edit', edit_recipe_path(@recipe)
-\|
-= link_to 'Back', recipes_path
+  %p= @recipe.directions

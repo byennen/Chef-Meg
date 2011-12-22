@@ -1,5 +1,7 @@
 ChefMeg::Application.routes.draw do
-  resources :recipes
+  get "dashboard/index"
+
+  resources :recipes, :only => [:index, :show]
 
   #get \"users\/show\"
 
@@ -7,6 +9,11 @@ ChefMeg::Application.routes.draw do
 
   devise_for :users
   resources :users, :only => :show
+
+  namespace :admin do
+    root :to => "dashboard#index"
+    resources :recipes
+  end
 
 
   # The priority is based upon order of creation:
