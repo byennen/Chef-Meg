@@ -1,4 +1,5 @@
 class Admin::RecipesController < ApplicationController
+  before_filter :authenticate_user!
   layout 'admin'
 
   def index
@@ -22,7 +23,7 @@ class Admin::RecipesController < ApplicationController
 
     respond_to do |format|
       if @recipe.save
-        format.html { redirect_to (admin_recipe_url), notice: 'Recipe was successfully created.' }
+        format.html { redirect_to (admin_recipes_url), notice: 'Recipe was successfully created.' }
        else
         format.html { render action: "new" }
       end
@@ -34,7 +35,7 @@ class Admin::RecipesController < ApplicationController
 
     respond_to do |format|
       if @recipe.update_attributes(params[:recipe])
-        format.html { redirect_to (admin_recipe_url), notice: 'Recipe was successfully updated.' }
+        format.html { redirect_to (admin_recipes_url), notice: 'Recipe was successfully updated.' }
       else
         format.html { render action: "edit" }
       end

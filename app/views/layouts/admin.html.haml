@@ -14,7 +14,7 @@
         .container
           = render 'shared/navigation'
     #container.container
-      #main{:role => "main"}
+      #admin_main{:role => "main"}
         - flash.each do |name, msg|
           .alert-message.error
             = link_to 'x', '#', :class => 'close'

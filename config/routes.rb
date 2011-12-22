@@ -2,7 +2,7 @@ ChefMeg::Application.routes.draw do
 
   #frontend
   root :to => "home#index"
-  resources :recipes, :only => [:index, :show]
+  resources :recipes, :only => :show
   devise_for :users
   resources :users, :only => :show
 
