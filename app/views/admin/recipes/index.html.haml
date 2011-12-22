@@ -16,7 +16,7 @@
       %td= recipe.directions
       %td= link_to 'Show', recipe
       %td= link_to 'Edit', edit_admin_recipe_path(recipe)
-      %td= link_to 'Destroy', recipe, :confirm => 'Are you sure?', :method => :delete
+      %td= link_to 'Destroy', admin_recipe_path(recipe), :confirm => 'Are you sure?', :method => :delete
 
 %br
 
