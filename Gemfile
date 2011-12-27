@@ -13,10 +13,11 @@ gem "haml", ">= 3.1.2"
 gem "devise", ">= 1.5.0"
 gem "twitter-bootstrap-rails"
 gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
+gem 'aws-sdk'
 
 group :development do
   #TODO: switch to postgres in the future -Lance
-  gem 'sqlite3'
+  gem 'mysql'
   gem "haml-rails", ">= 0.3.4"
   gem "rspec-rails", ">= 2.8.0.rc1"
   gem "guard", ">= 0.6.2"

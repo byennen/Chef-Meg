@@ -12,10 +12,12 @@ class Admin::RecipesController < ApplicationController
 
   def new
     @recipe = Recipe.new
+    @recipe.recipe_photos.build
   end
 
   def edit
     @recipe = Recipe.find(params[:id])
+    @recipe.recipe_photos.build
   end
 
   def create

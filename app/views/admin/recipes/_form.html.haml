@@ -9,6 +9,13 @@
   .field
     = f.label :title
     = f.text_field :title
+    -# if @recipe.recipe_photos.present?
+    - @recipe.recipe_photos.each do |photo|
+      = image_tag photo.image.url(:small)
+  .field
+    = f.label :image
+    = f.fields_for :recipe_photos do |builder|
+      = render 'recipe_photo_fields', :f => builder
   .field
     = f.label :ingredients
     = f.text_area :ingredients

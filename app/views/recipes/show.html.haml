@@ -1,6 +1,11 @@
 %p#notice= notice
 
 %h1= @recipe.title
+
+- @recipe.recipe_photos.each do |photo|
+  = image_tag photo.image.url(:big)
+
+
 %div
   %b Ingredients:
   %div= @recipe.ingredients
