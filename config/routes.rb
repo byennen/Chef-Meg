@@ -13,7 +13,7 @@ ChefMeg::Application.routes.draw do
 
   #admin
   namespace :admin do
-    root :to => "dashboard#index"
+    root :to => "recipes#index"
     resources :recipes
     resources :users
   end

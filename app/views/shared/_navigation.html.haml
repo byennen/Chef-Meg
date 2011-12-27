@@ -1,7 +1,8 @@
 .brand= link_to 'Chef-Meg', admin_root_path
 - if user_signed_in?
-  %li
-    = link_to('Logout', destroy_user_session_path, :method=>'delete')
-  %li
-    = link_to('Edit account', edit_user_registration_path)
+  %ul.nav
+    %li
+      = link_to('Logout', destroy_user_session_path, :method=>'delete')
+    %li
+      = link_to('Edit account', edit_user_registration_path)
 
