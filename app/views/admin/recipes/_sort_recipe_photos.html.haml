@@ -1,6 +1,7 @@
 - unless f.object.new_record?
-  %li.fields.asset[f.object]
-    = image_tag f.object.image.url(:small)
-    %br
-    = f.hidden_field :_destroy
-    = link_to_remove_fields "remove", f
+  %li.fields.thumb_image[f.object]
+    %div.image
+      = link_to image_tag(f.object.image.url(:small), :class => 'thumbnail'), '#'
+      %div.remove
+        = f.hidden_field :_destroy
+        = link_to_remove_fields "remove", f

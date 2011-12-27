@@ -14,8 +14,9 @@
     - unless f.object.new_record?
       .clearfix
         .input
-          = f.fields_for :recipe_photos do |builder|
-            = render 'sort_recipe_photos', :f => builder
+          %ul.media-grid
+            = f.fields_for :recipe_photos do |builder|
+              = render 'sort_recipe_photos', :f => builder
     .clearfix
       = f.label "Upload Images"
       = f.fields_for :recipe_photos do |builder|
