@@ -2,18 +2,16 @@
 
 %table.zebra-striped
   %tr
+    %th Image
     %th Title
-    %th Ingredients
-    %th Directions
     %th
     %th
     %th
 
   - @recipes.each do |recipe|
     %tr
+      %td= link_to image_tag(recipe.recipe_photos.first.image.url(:small)), edit_admin_recipe_path(recipe)
       %td= recipe.title
-      %td= recipe.ingredients
-      %td= recipe.directions
       %td= link_to 'Show', recipe
       %td= link_to 'Edit', edit_admin_recipe_path(recipe)
       %td= link_to 'Destroy', admin_recipe_path(recipe), :confirm => 'Are you sure?', :method => :delete
