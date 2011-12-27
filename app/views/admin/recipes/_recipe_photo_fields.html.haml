@@ -1,3 +1,4 @@
 - if f.object.new_record?
-  .field
-    = f.file_field :image
+  .clearfix
+    .input
+      = f.file_field :image, :class => 'input-file'

@@ -1,4 +1,7 @@
-%h1 Listing recipes
+.top
+  %h1 Listing recipes
+  .options
+    = link_to 'New Recipe', new_admin_recipe_path, :class => 'btn'
 
 %table.zebra-striped
   %tr
@@ -15,7 +18,3 @@
       %td= link_to 'Show', recipe
       %td= link_to 'Edit', edit_admin_recipe_path(recipe)
       %td= link_to 'Destroy', admin_recipe_path(recipe), :confirm => 'Are you sure?', :method => :delete
-
-%br
-
-= link_to 'New Recipe', new_admin_recipe_path

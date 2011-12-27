@@ -13,14 +13,16 @@
         = f.text_field :title
     - unless f.object.new_record?
       .clearfix
-        = f.label ""
-        - @recipe.recipe_photos.each do |photo|
-          = image_tag photo.image.url(:small)
+        .input
+          = f.fields_for :recipe_photos do |builder|
+            = render 'sort_recipe_photos', :f => builder
     .clearfix
       = f.label "Upload Images"
+      = f.fields_for :recipe_photos do |builder|
+        = render 'recipe_photo_fields', :f => builder
+    .clearfix
       .input
-        = f.fields_for :recipe_photos do |builder|
-          = render 'recipe_photo_fields', :f => builder
+        = link_to_add_fields "Add Recipe Photos", f, :recipe_photos
     .clearfix
       = f.label :ingredients
       .input
@@ -32,3 +34,5 @@
     .actions
       = f.submit 'Save', :class => 'btn primary'
       = link_to 'Back', admin_recipes_path, :class => 'btn'
+      - if params[:action] == 'edit'
+        = link_to 'Show', @recipe, :class => 'btn success'
