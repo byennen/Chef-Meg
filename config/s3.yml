@@ -1,0 +1,16 @@
+defaults: &defaults
+  access_key_id: AKIAJAVE644M3HAOZAVQ
+  secret_access_key: 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
+
+
+development:
+  <<: *defaults
+  bucket: chef-meg-development
+
+test:
+  <<: *defaults
+
+production: 
+  <<: *defaults
+  bucket: chef-meg-production
+
