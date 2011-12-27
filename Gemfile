@@ -12,6 +12,7 @@ gem 'jquery-rails'
 gem "haml", ">= 3.1.2"
 gem "devise", ">= 1.5.0"
 gem "twitter-bootstrap-rails"
+gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
 
 group :development do
   #TODO: switch to postgres in the future -Lance
