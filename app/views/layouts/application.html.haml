@@ -12,8 +12,9 @@
     #container.container
       %header
         = link_to image_tag('logo.png'), root_path
-      #main{:role => "main"}
+      %section
         - flash.each do |name, msg|
           = content_tag :div, msg, :id => "flash_\#{name}" if msg.is_a?(String)
-        .span11= yield
+        = yield
+      %aside= render 'shared/sidebar'
       %footer
