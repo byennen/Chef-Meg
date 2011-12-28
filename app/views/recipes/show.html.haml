@@ -1,10 +1,11 @@
+#slideshow_title
+  %h1= @recipe.title
+
+.slideshow
+  - @recipe.recipe_photos.each do |photo|
+    = image_tag photo.image.url(:big)
+
 %p#notice= notice
-
-%h1= @recipe.title
-
-- @recipe.recipe_photos.each do |photo|
-  = image_tag photo.image.url(:big)
-
 
 %div
   %b Description:

@@ -19,3 +19,8 @@ function remove_fields(link) {
   $(link).prev("input[type=hidden]").val("1");
   $(link).closest(".fields").hide();
 }
+
+$(function(){
+	$('.slideshow img:gt(0)').hide();
+	setInterval(function(){$('.slideshow :first-child').fadeOut().next('img').fadeIn().end().appendTo('.slideshow');}, 5000);
+});
