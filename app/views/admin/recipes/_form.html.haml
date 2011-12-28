@@ -11,6 +11,8 @@
       = f.label :title
       .input
         = f.text_field :title
+
+    -# image upload
     - unless f.object.new_record?
       .clearfix
         .input
@@ -28,10 +30,29 @@
       = f.label :description
       .input
         = f.text_area :description, :class => 'xxlarge'
+    
+    -# ingredients
+    .clearfix
+      = f.label "Add Ingredients"
+    - unless f.object.new_record?
+      .clearfix
+        .input
+          %ul.media-grid
+            = f.fields_for :ingredients do |builder|
+              = render 'sort_ingredients', :f => builder
+    .clearfix
+      = f.fields_for :ingredients do |builder|
+        = render 'ingredient_fields', :f => builder
+    .clearfix
+      .input
+        = link_to_add_fields "Add Ingredients", f, :ingredients
+    
+    -# preparation
     .clearfix
       = f.label :preparation
       .input
         = f.text_area :preparation, :class => 'xxlarge'
+
     .actions
       = f.submit 'Save', :class => 'btn primary'
       = link_to 'Back', admin_recipes_path, :class => 'btn'
