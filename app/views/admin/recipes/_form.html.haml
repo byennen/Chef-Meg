@@ -25,13 +25,13 @@
       .input
         = link_to_add_fields "Add Recipe Photos", f, :recipe_photos
     .clearfix
-      = f.label :ingredients
+      = f.label :description
       .input
-        = f.text_area :ingredients, :class => 'xxlarge'
+        = f.text_area :description, :class => 'xxlarge'
     .clearfix
-      = f.label :directions
+      = f.label :preparation
       .input
-        = f.text_area :directions, :class => 'xxlarge'
+        = f.text_area :preparation, :class => 'xxlarge'
     .actions
       = f.submit 'Save', :class => 'btn primary'
       = link_to 'Back', admin_recipes_path, :class => 'btn'

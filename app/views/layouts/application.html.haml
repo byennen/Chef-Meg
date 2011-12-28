@@ -15,5 +15,5 @@
       #main{:role => "main"}
         - flash.each do |name, msg|
           = content_tag :div, msg, :id => "flash_\#{name}" if msg.is_a?(String)
-        = yield
+        .span11= yield
       %footer
