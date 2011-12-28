@@ -1,21 +1,22 @@
 #slideshow_title
   %h1= @recipe.title
 
+%p#notice= notice
+
 .slideshow
   - @recipe.recipe_photos.each do |photo|
     = image_tag photo.image.url(:big)
 
-%p#notice= notice
+.description
+  %h2 Description:
+  %div= @recipe.description
 
 .ingredients
   - @recipe.ingredients.each do |ingredient|
     %p.name= ingredient.name
     %p.amount= ingredient.amount
 
-%div
-  %h2 Description:
-  %div= @recipe.description
-
-%div
-  %h3 Preparation:
-  %p= @recipe.preparation
+.preparation
+  %ul
+    - @recipe.steps.each do |step|
+      %li.name= step.name

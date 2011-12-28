@@ -14,12 +14,14 @@ class Admin::RecipesController < ApplicationController
     @recipe = Recipe.new
     @recipe.recipe_photos.build
     @recipe.ingredients.build
+    @recipe.steps.build
   end
 
   def edit
     @recipe = Recipe.find(params[:id])
     @recipe.recipe_photos.build
     @recipe.ingredients.build
+    @recipe.steps.build
   end
 
   def create
