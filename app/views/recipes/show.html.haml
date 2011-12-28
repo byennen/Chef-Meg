@@ -12,11 +12,11 @@
   %div= @recipe.description
 
 .ingredients
+  %h3 Ingredients
   - @recipe.ingredients.each do |ingredient|
     %p.name= ingredient.name
-    %p.amount= ingredient.amount
 
 .preparation
-  %ul
-    - @recipe.steps.each do |step|
-      %li.name= step.name
+  %h4 Preparation
+  - @recipe.steps.each do |step|
+    %p.name= step.name

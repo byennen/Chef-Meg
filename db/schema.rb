@@ -16,7 +16,6 @@ ActiveRecord::Schema.define(:version => 20111228180038) do
   create_table "ingredients", :force => true do |t|
     t.integer  "recipe_id"
     t.string   "name"
-    t.string   "amount"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
