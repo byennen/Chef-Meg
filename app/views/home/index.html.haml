@@ -1,5 +1,6 @@
 - @recipes.each do |recipe|
-  = link_to image_tag(recipe.recipe_photos.first.image.url(:big)), recipe
+  - if recipe.recipe_photos.present?
+    = link_to image_tag(recipe.recipe_photos.first.image.url(:big)), recipe
   %h2= link_to recipe.title, recipe
   %p= recipe.description
   %hr
