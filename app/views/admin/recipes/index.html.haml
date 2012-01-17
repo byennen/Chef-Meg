@@ -13,7 +13,10 @@
 
   - @recipes.each do |recipe|
     %tr
-      %td= link_to image_tag(recipe.recipe_photos.first.image.url(:small)), edit_admin_recipe_path(recipe)
+      - if recipe.recipe_photos.present?
+        %td= link_to image_tag(recipe.recipe_photos.first.image.url(:small)), edit_admin_recipe_path(recipe)
+      -else
+        %td Missing
       %td= recipe.title
       %td= link_to 'Show', recipe
       %td= link_to 'Edit', edit_admin_recipe_path(recipe)
